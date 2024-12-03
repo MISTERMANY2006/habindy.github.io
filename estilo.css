@@ -1,0 +1,93 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+.content {
+	width: 100%;
+	height: 100vh;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+}
+
+.slid {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+	color: #fff;
+	scroll-snap-align: start;
+
+}
+
+.slid img{
+	width: 350px;
+}
+
+.slid h2{
+	font-size: 50px;
+	font-weight: 600;
+	max-width: 650px;
+}
+
+.content0{
+	background-image: url(agua.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-attachment: fixed;
+}
+.content0 h2{
+	font-size: 50px;
+	font-weight: 600;
+	max-width: 650px;
+}
+
+.hola{
+	width: 350px;
+	height: 670px;
+	align-self: center;
+}
+	
+	
+}
+.content1{
+	background-image: url(1.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-attachment: fixed;
+}
+
+.content2{
+	background-image: url(agua.jpg);
+	 background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-attachment: fixed;
+}
+
+.content3{
+	background-image: url(3.jpg);
+	 background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-attachment: fixed;
+}
+
+#juego1{
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: pink;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}

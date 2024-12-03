@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+<meta charset="UTF-8">
+<title>ITMI</title> 
+<link rel="stylesheet" href="logica.css"> 
+</head>
+
+  <body>
+
+ 
+<div id="text-container2"> <span id="text2">ALPHA 0.03</span> 
+<div class="problem-container"> 
+<h2 id="problema">Haz clic en "Generar problema" para obtener uno</h2> 
+
+<button  class="button-62" role="button" onclick="generarProblema()">Generar problema</button> <br>
+
+<input type="text" id="respuesta" placeholder="Escribe tu respuesta aquí" style="border-radius: 12px;  font-size: 16px; font-weight: 500;
+  line-height: 2.2;">
+
+<button class="button-62" role="button" onclick="verificarRespuesta()"> Verificar respuesta </button>
+
+<h2 id="resultado"></h2> </div>
+
+  <script>
+    function generarProblema() {
+ var problema = document.getElementById('problema');
+      var problemas = [
+        "Si tres gatos cazan tres ratones en tres minutos, ¿cuántos gatos se necesitan para atrapar 100 ratones en 100 minutos?",
+        "Si un médico receta 3 pastillas cada media hora, ¿cuántas pastillas recetará en 3 horas?",
+        "Si 5 máquinas tardan 5 minutos en hacer 5 productos, ¿cuánto tiempo tardarán 100 máquinas en hacer 100 productos?"
+        // Puedes añadir más problemas aquí
+      ];
+      var randomIndex = Math.floor(Math.random() * problemas.length);
+      problema.textContent = problemas[randomIndex];
+    }
+
+    function verificarRespuesta() {
+      var respuestaUsuario = document.getElementById('respuesta').value;
+       var resultado = document.getElementById('resultado');
+      var respuesta = document.getElementById('respuesta');
+      var solucion;
+      
+  
+      if (respuestaUsuario.trim() === '5') {
+         resultado.textContent = "¡Respuesta correcta!";
+      } else {
+         resultado.textContent = "Respuesta incorrecta. Inténtalo de nuevo.";
+      }
+      
+    }
+  </script>
+
+<!-- Botón para ir a la siguiente página -->
+<button id="nextPageButton" onclick="location.href='index.html'">Actividades</button>
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+<meta charset="UTF-8">
+<title>ITMI</title> 
+<link rel="icon" href="FOTOS/Fuego.png"
+type="image/x-icon"> 
+<link rel="stylesheet" href="mat.css"> 
+</head>
+
+  <body>
+
+<div class="problem-container"> 
+<h2 id="problema">Haz clic en "Generar problema" para obtener uno</h2> 
+
+<button  class="button-62" role="button" onclick="generarProblema()">Generar problema</button> <br>
+
+<input type="text" id="respuesta" placeholder="Escribe tu respuesta aquí" style="border-radius: 12px;  font-size: 16px; font-weight: 500;
+  line-height: 2.2;">
+
+<button class="button-62" role="button" onclick="verificarRespuesta()"> Verificar respuesta </button>
+
+<p id="resultado"></p> </div>
+
+  <script>
+    function generarProblema() {
+      var problema = document.getElementById('problema');
+      var operadores = ['+', '-', '*', '/'];
+      var operador = operadores[Math.floor(Math.random() * operadores.length)];
+      var num1 = Math.floor(Math.random() * 20) + 1;
+      var num2 = Math.floor(Math.random() * 20) + 1;
+      var pregunta = `¿Cuánto es ${num1} ${operador} ${num2}?`;
+      
+      problema.textContent = pregunta;
+      sessionStorage.setItem('respuestaCorrecta', eval(`${num1} ${operador} ${num2}`));
+    }
+
+    function verificarRespuesta() {
+      var respuestaUsuario = document.getElementById('respuesta').value;
+      var respuesta = document.getElementById('respuesta');
+      var resultado = document.getElementById('resultado');
+      var respuestaCorrecta = sessionStorage.getItem('respuestaCorrecta');
+      
+      if (respuestaUsuario.trim() === respuestaCorrecta) {
+        resultado.textContent = "¡Respuesta correcta!";
+
+      } else {
+        resultado.textContent = "Respuesta incorrecta. Inténtalo de nuevo.";
+      }
+    }
+  </script>
+
+<!-- Botón para reproducir/pausar música -->
+<button id="musicButton" onclick="toggleMusic()">Reproducir Música</button>
+
+<!-- Botón para ir a la siguiente página -->
+<button id="nextPageButton" onclick="location.href='Juegos.html'">Actividades</button>
+
+<!-- Elemento de audio -->
+<audio id="myAudio">
+  <source src="EchoClone1.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio HTML5.
+</audio>
+
+<script>
+var audio = document.getElementById("myAudio");
+var musicButton = document.getElementById("musicButton");
+
+function toggleMusic() {
+  if (audio.paused) {
+    audio.play();
+    musicButton.textContent = "Detener Música";
+  } else {
+    audio.pause();
+    musicButton.textContent = "Reproducir Música";
+  }
+}
+</script>
+</body>
+</html>
